@@ -2,8 +2,8 @@
 
 Please fork this repository and paste the github link of your fork on Microsoft CMT. Detailed instructions are on Coursera under Week 1: Course Project Overview/Week 9 Activities.
 
-Team Name: Model Behavior
-Team Members: Gautam Putcha, Ashna Anil, Kunal Samant, Parth Maheshkumar Patel
+# Team Name: Model Behavior
+# Team Members: Gautam Putcha, Ashna Anil, Kunal Samant, Parth Maheshkumar Patel
 
 
 We will be building a search engine that ranks events/activities in your location based on events on websites such as Eventbrite, tweets or Facebook events based on a combination of user preferences/history. This is a text retrieval and ranking task after parsing information from different sources. This uses content based filtering while ranking the events to match the users preferences. 
