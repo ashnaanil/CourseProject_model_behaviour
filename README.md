@@ -15,3 +15,15 @@ Our approach is to pull data from a variety of sources containing data about eve
 Our expected outcome is to develop a centralized system for finding events in a users area by searching for relevant events from several sources of data. We expect to have a well-functioning frontend to accompany our text retrieval and ranking system. We hope to leverage the text retrieval techniques learnt in this course to optimize our ranking process and find the most relevant results for users.
 
 We will get user feedback through relevant or not relevant ratings and improve on our performance with higher success rates. Lastly, we intend to use Python for the Backend and React/Flask for the Frontend of the project.
+
+# Software Documentation
+
+# 1. Functional Overview
+The basic idea of the application we have built is to accept a query from the user and return a ranked list of the most relevant events in a given city. The user can choose from a drop-down menu of cities where events are taking place. A user's workflow on our application would look as follows:
+1. Open the event ranking engine application.
+2. Type in a query for the events that the user desires to search for. Press "Enter". The ranked list of results is shown.
+3. The user may optionally filter the results for the desired city/location. The ranked list is then updated to include only events in the user's desired city.
+
+For any individual seeking a specific event or type of event near them, our application could be used to find a list of the most relevant events from multiple sources (i.e. Eventbrite and Twitter)
+
+# 2. How the software is implemented
