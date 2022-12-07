@@ -2,8 +2,69 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
+import nltk
+from rank_bm25 import *
+import string #library that contains punctuation
+
 
 st.set_page_config(layout="wide")
+
+def remove_punctuation(text):
+    punctuationfree="".join([i for i in text if i not in string.punctuation])
+    return punctuationfree
+
+def tokenization(text):
+    tokens = text.split()
+    return tokens
+
+def remove_stopwords(text):
+    output= [i for i in text if i not in stopwords]
+    return output
+
+def preprocess(filepath):
+    # Load combined dataset
+           
+    #applying function to the column
+    combined_df['clean_doc_text']= combined_df['clean_doc_text'].apply(lambda x: tokenization(x))
+
+    #applying the function
+    combined_df['clean_doc_text']= combined_df['clean_doc_text'].apply(lambda x:remove_stopwords(x))
+ 
+    preprocessed_corpus = combined_df["clean_doc_text"].tolist()
+
+    return preprocessed_corpus
+
+
+def ranked_list(query, df, preprocessed_corpus):
+    bm25 = BM25Okapi(preprocessed_corpus,k1=1.2, b=0.5, epsilon=500 )
+   
+    # Preprocessing query
+    punc_free_query = remove_punctuation(query)
+    lower_query = punc_free_query.lower()
+    tokenized_query = tokenization(lower_query)
+    preprocessed_query = remove_stopwords(tokenized_query)
+    # print(preprocessed_query)
+
+    #getting scores for each document
+    doc_scores = bm25.get_scores(preprocessed_query)
+
+    df["doc_scores"] = doc_scores
+    df = df.sort_values(by=['doc_scores'], ascending=False)
+
+    return df
+
+
+#main
+nltk.download('stopwords')
+stopwords = nltk.corpus.stopwords.words('english')
+
+filepath = "./combined_dataset.csv"
+combined_df = pd.read_csv(filepath)
+ranked_df = combined_df
+
+
+preprocessed_corpus = preprocess(combined_df)
+
 
 # -- Create three columns
 col1, col2, col3 = st.columns([10, 25, 10])
@@ -33,22 +94,23 @@ with query_col:
     )
     if text_input:
         st.write("You entered this query: ", text_input)
+        #use ranker code to retrieve ranked list
+        ranked_df =  ranked_list(text_input, combined_df, preprocessed_corpus)
+
     #st.subheader("Look at the below table for the results of your query:")
 
 
-# -- Read in the data
-EB_df = pd.read_csv("EventBrite_data.csv", encoding='windows-1252')
 # -- Apply the continent filter
 if city_choice != "All":
-    EB_df = EB_df[EB_df.city == city_choice]
+    ranked_df = ranked_df[ranked_df.city == city_choice]
 
 ranked_table = st.container()
 with ranked_table:
     st.title("Ranked List of Events:")
-    table = go.Figure(data=go.Table(columnorder = [1,2,3,4,5,6], columnwidth = [10,50,40,40,50,40],
-    header=dict(values=list(EB_df[['Rank','title','time','venue','URL','user']].columns), height=60,
+    table = go.Figure(data=go.Table(columnorder = [1,2,3,4,5], columnwidth = [50,40,40,50,40],
+    header=dict(values=list(ranked_df[['title','time','venue','URL','user']].columns), height=60,
     font=dict(color='black'), fill_color='#546e9c', align='center',line_color='black',font_size = 30), 
-    cells=dict(values=[EB_df.Rank,EB_df.title,EB_df.time,EB_df.venue,EB_df.URL,EB_df.user],
+    cells=dict(values=[ranked_df.title,ranked_df.time,ranked_df.venue,ranked_df.URL,ranked_df.user],
     font=dict(color='black'), fill_color = "#8ca5d1", align='left',line_color='black',font_size = 20)))
     
     table.update_layout(width=1800, height=800)
@@ -56,16 +118,7 @@ with ranked_table:
 
 
 
-# # -- Create the figure in Plotly
-# fig = px.scatter(
-#     filtered_df,
-#     x="gdpPercap",
-#     y="lifeExp",
-#     size="pop",
-#     color="continent",
-#     hover_name="country",
-#     size_max=60,
-# )
-# fig.update_layout(title="GDP per Capita vs. Life Expectancy")
-# # -- Input the Plotly chart to the Streamlit interface
-# st.plotly_chart(fig, use_container_width=True)
+
+
+
+
