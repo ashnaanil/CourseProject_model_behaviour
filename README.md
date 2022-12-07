@@ -27,3 +27,7 @@ The basic idea of the application we have built is to accept a query from the us
 For any individual seeking a specific event or type of event near them, our application could be used to find a list of the most relevant events from multiple sources (i.e. Eventbrite and Twitter)
 
 # 2. How the software is implemented
+The functionality of our application is primarily implemented in the following 2 files:
+1. preprocess.py
+2. streamlit_app_cs410.py
+
