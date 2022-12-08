@@ -81,3 +81,8 @@ streamlit run streamlit_app_cs410.py
 
 # 4. Team Member Contribution
 
+*All Team Members contributed to creating the basic framework an linking the frontend with the backend*
+Kunal - created function to extract, format, and organize twitter data, provided twitter dataset for model training
+Ashna - created function to extract, format, and organize twitter data, provided twitter dataset for model training, created the UI on streamlit
+Parth - created function to extract, format, and organize eventbrite data, built ranking function (backend)
+Gautam - created function to extract, format, and organize eventbrite data, buil ranking function
