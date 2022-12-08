@@ -14,7 +14,7 @@ Our approach is to pull data from a variety of sources containing data about eve
 
 Our expected outcome is to develop a centralized system for finding events in a users area by searching for relevant events from several sources of data. We expect to have a well-functioning frontend to accompany our text retrieval and ranking system. We hope to leverage the text retrieval techniques learnt in this course to optimize our ranking process and find the most relevant results for users.
 
-We will get user feedback through relevant or not relevant ratings and improve on our performance with higher success rates. Lastly, we intend to use Python for the Backend and React/Flask for the Frontend of the project.
+We will get user feedback through relevant or not relevant ratings and improve on our performance with higher success rates. Lastly, we used Python for the Backend and the Streamlit python library for the Frontend implementation of the project.
 
 # Software Documentation
 
