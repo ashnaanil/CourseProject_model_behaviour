@@ -27,9 +27,13 @@ The basic idea of the application we have built is to accept a query from the us
 For any individual seeking a specific event or type of event near them, our application could be used to find a list of the most relevant events from multiple sources (i.e. Eventbrite and Twitter)
 
 # 2. How the software is implemented
-The functionality of our application is primarily implemented in the following 2 files:
-1. preprocess.py
-2. streamlit_app_cs410.py
+The functionality of our application is primarily implemented using the following files:
+1. create_EventBrite_data.py
+2. create_twitter_data.py
+3. preprocess.py
+4. streamlit_app_cs410.py
+
+create_EventBrite_data.py contains a crawler implementation that is used to retrieve data from the eventbrite website and create a dataset. The "BeautifulSoup" library was used to scrape information about events from the website, and the collected data was saved in a csv file (EventBrite_data.csv)
 
 preprocess.py is not run during the usage of our application. We created this file to process the raw data we gathered from both Eventbrite as well as Twitter. This file carries out the following tasks:
 1. Replaces any of the "NaN" values in the dataset with empty strings.
