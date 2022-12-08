@@ -35,6 +35,8 @@ The functionality of our application is primarily implemented using the followin
 
 create_EventBrite_data.py contains a crawler implementation that is used to retrieve data from the eventbrite website and create a dataset. The "BeautifulSoup" library was used to scrape information about events from the website, and the collected data was saved in a csv file (EventBrite_data.csv)
 
+create_twitter_data.py contains a crawler implkementation as well. The crawler pulls data from the twitter website based on queries provided to the function and exports it to a dataset. We used the pandas and numpy library to obtain informatio about events in Seattle, Chicago, Arlington, and Champaign. The dataset id exported into twitter_data.csv.
+
 preprocess.py is not run during the usage of our application. We created this file to process the raw data we gathered from both Eventbrite as well as Twitter. This file carries out the following tasks:
 1. Replaces any of the "NaN" values in the dataset with empty strings.
 2. For the "tags" field of our data (hashtags/eventbrite search tags) remove the square bracket and backslash characters.
