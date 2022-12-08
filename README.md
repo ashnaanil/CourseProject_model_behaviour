@@ -70,7 +70,7 @@ streamlit run streamlit_app_cs410.py
 	  You can now view your Streamlit app in your browser.
 	
 	  Local URL: http://localhost:8501
-	  Network URL: http://76.191.29.24:8501
+	  Network URL: http://xx.xxx.xx.xx:xxxx
 ```
 5. Copy the "Local URL" and paste it into a browser.
 6. This should launch the ranking application on your browser.
