@@ -61,6 +61,7 @@ pip install plotly
 pip install rank-bm25
 ```
 Also make sure that the python string library is available for use.
+
 3. To start the application, enter the following into the terminal:
 ```
 streamlit run streamlit_app_cs410.py
