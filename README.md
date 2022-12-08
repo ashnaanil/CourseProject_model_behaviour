@@ -52,3 +52,28 @@ The streamlit_app_cs410.py file contains all of the functionality that runs when
 The main code calls the preprocess and ranked_list functions. The ranked_list function is called every time a new query is entered by the user.
 
 # 3. Documentation of the Sotware Usage
+To run the application, the user must follow the following steps:
+1. Ensure that all of the files in this repository are stored on a single folder locally.
+2. Open up a terminal and perform the following commands:
+```
+pip install streamlit
+pip install plotly
+pip install rank-bm25
+```
+Also make sure that the python string library is available for use.
+3. To start the application, enter the following into the terminal:
+```
+streamlit run streamlit_app_cs410.py
+```
+4. You should now see the following output on the terminal window:
+```
+	  You can now view your Streamlit app in your browser.
+	
+	  Local URL: http://localhost:8501
+	  Network URL: http://76.191.29.24:8501
+```
+5. Copy the "Local URL" and paste it into a browser.
+6. This should launch the ranking application on your browser.
+7. Now, the user may type in any query and press the "Enter" key to see the results of the relevant events.
+8. Optionally, the user may choose a location filter using the provided drop-down menu to list only the events in a given city.
+9. As new queries and entered or a new filter is applied, the results of the ranking engine will update and present themselves on the table shown below the search box UI.
