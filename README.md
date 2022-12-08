@@ -85,4 +85,4 @@ streamlit run streamlit_app_cs410.py
 1. Kunal - created function to extract, format, and organize twitter data, provided twitter dataset for model training
 2. Ashna - created function to extract, format, and organize twitter data, provided twitter dataset for model training, created the UI on streamlit
 3. Parth - created function to extract, format, and organize eventbrite data, built ranking function (backend)
-4. Gautam - created function to extract, format, and organize eventbrite data, buil ranking function
+4. Gautam - created function to extract, format, and organize eventbrite data, built ranking function
