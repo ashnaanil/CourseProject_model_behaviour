@@ -78,3 +78,6 @@ streamlit run streamlit_app_cs410.py
 7. Now, the user may type in any query and press the "Enter" key to see the results of the relevant events.
 8. Optionally, the user may choose a location filter using the provided drop-down menu to list only the events in a given city.
 9. As new queries and entered or a new filter is applied, the results of the ranking engine will update and present themselves on the table shown below the search box UI.
+
+# 4. Team Member Contribution
+
