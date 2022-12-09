@@ -75,7 +75,7 @@ streamlit run streamlit_app_cs410.py
 	  Local URL: http://localhost:8501
 	  Network URL: http://xx.xxx.xx.xx:xxxx
 ```
-5. Copy the "Local URL" and paste it into a browser.
+5. Copy the "Local URL" and paste it into a browser. (If the browser does not automatically open up)
 6. This should launch the ranking application on your browser.
 7. Now, the user may type in any query and press the "Enter" key to see the results of the relevant events.
 8. Optionally, the user may choose a location filter using the provided drop-down menu to list only the events in a given city.
