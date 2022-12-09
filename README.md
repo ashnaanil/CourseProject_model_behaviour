@@ -93,3 +93,4 @@ streamlit run streamlit_app_cs410.py
 
 1. https://towardsdatascience.com/building-a-dashboard-in-under-5-minutes-with-streamlit-fd0c906ff886
 2. https://docs.streamlit.io/library/api-reference/widgets/st.text_input
+3. https://medium.com/@peiw/beginner-guide-for-parse-twitter-posts-by-python-tweepy-ee606e031a2b
