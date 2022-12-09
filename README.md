@@ -94,3 +94,7 @@ streamlit run streamlit_app_cs410.py
 1. https://towardsdatascience.com/building-a-dashboard-in-under-5-minutes-with-streamlit-fd0c906ff886
 2. https://docs.streamlit.io/library/api-reference/widgets/st.text_input
 3. https://medium.com/@peiw/beginner-guide-for-parse-twitter-posts-by-python-tweepy-ee606e031a2b
+4. https://www.digitalocean.com/community/tutorials/scrape-amazon-product-information-beautiful-soup
+5. https://beautiful-soup-4.readthedocs.io/en/latest/
+6. https://www.analyticsvidhya.com/blog/2021/06/text-preprocessing-in-nlp-with-python-codes/
+7. https://pypi.org/project/rank-bm25/
